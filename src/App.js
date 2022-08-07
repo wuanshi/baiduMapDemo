@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Map, MapApiLoaderHOC, } from 'react-bmapgl'
+import './App.css'
 function App() {
+  console.log(window.BMapGL);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+      <Map
+        style={{ height: 300, width: '48%' }}
+        center={new window.BMapGL.Point(116.404449, 39.914889)}
+        zoom={12}
+      />
+      <Map
+        style={{ height: 300, width: '48%' }}
+        center={new window.BMapGL.Point(116.404449, 39.914889)}
+        zoom={12}
+      />
     </div>
   );
 }
 
-export default App;
+export default MapApiLoaderHOC({ak:'CxPzIyPLFEE9yoNIaamX4BS0xTOWijAw' })(App);
